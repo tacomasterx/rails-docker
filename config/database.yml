@@ -18,7 +18,6 @@ default: &default
   adapter: postgresql
   encoding: unicode
   host: database
-  # port: 5432
   # host: <%= ENV["DATABASE_HOST"] %>
   # port: <%= ENV["DATABASE_PORT"] %>
   # For details on connection pooling, see Rails configuration guide
@@ -28,8 +27,8 @@ default: &default
 development:
   <<: *default
   # user: <%= ENV["POSTGRES_USER"] %>
-  user: postgres
   # password: <%= ENV["POSTGRES_PASSWORD"] %>
+  user: postgres
   password: postgres
   database: rails_docker_test_development
 
