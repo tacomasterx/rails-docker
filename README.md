@@ -1,6 +1,7 @@
 # README
 
 Primer intento funcional de crear una app de rails que funcione dentro de su propio contenedor en docker y permita hacer cambios directamente desde el `host`.
+Para más detalles, visitar [aquí](https://github.com/docker/awesome-compose/blob/master/official-documentation-samples/rails/README.md).
 
 ## Imágenes utilizadas
 * postgres:latest
