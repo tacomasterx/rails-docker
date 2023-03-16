@@ -1,22 +1,24 @@
-version: '3'
+version: '3.8'
 services: 
-  db:
-    image: postgres:15.2
-    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+  database:
+    image: postgres
+    ports:
+      - "5433:5432"
+    environment:
+      - POSTGRES_PASSWORD=postgres
     volumes:
-      - postgres: /var/lib/postgres/data/
+      - pgdb:/var/lib/postgres/data/
   web:
     build: .
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
     volumes:
-      - .:/app/
-      - bundler_gems: /home/kupoman/.frum/versions/3.2.1/lib/ruby/gems/3.2.0/gems/
+      - .:/app
+      - bundler_gems:/usr/local/bundle
     ports: 
-      - "3000:3000"
-    link:
-      - db
+      - "3001:3000"
     depends_on:
-      - db
+      - database
 
 volumes:
-  postgres:
+  pgdb:
   bundler_gems:
