@@ -9,7 +9,6 @@ COPY ./Gemfile ./
 COPY ./Gemfile.lock ./
 RUN bundle install
 
-
 RUN chmod -R u+x ./bin/
 # Entrypoint script
 # Add a script to be executed every time the container starts.

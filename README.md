@@ -36,4 +36,5 @@ De nuevo, se necesita tener instalado tanto "docker" como "docker-compose" en la
   * ./docker-compose.yml
   * ./entrypoint.sh
 2. Crear una copia del archivo ".gitignore" de su aplicación y cambiarle el nombre por ".dockerignore". Esto hará que docker ignore la transferencia de ciertos archivos que serán creados durante el proceso.
-3. Efectuar los pasos de la sección anterior a partir de el paso 2.
+3. Asegurarse de que las las versiones de "ruby" y "rails" coincidan entre el "Gemfile" y el "Dockerfile".
+4. Efectuar los pasos de la sección anterior a partir de el paso 2.
